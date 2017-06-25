@@ -1,4 +1,4 @@
-# QuoteOfTheDay::Client
+# QuoteOfTheDay Gem
 
 A client for the
 [Quote of the Day Service](https://github.com/jdlubrano/quote_of_the_day)

@@ -1,0 +1,96 @@
+{
+  "consumer": {
+    "name": "Client Gem"
+  },
+  "provider": {
+    "name": "Quote of the Day Service"
+  },
+  "interactions": [
+    {
+      "description": "a request for a quote",
+      "providerState": "foo",
+      "request": {
+        "method": "get",
+        "path": "/quote"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "quote": {
+            "content": "Quote this"
+          }
+        }
+      }
+    },
+    {
+      "description": "a request to create a quote",
+      "providerState": "the quote content is valid",
+      "request": {
+        "method": "post",
+        "path": "/quote",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "quote": {
+            "content": "Quote that"
+          }
+        }
+      },
+      "response": {
+        "status": 201,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "quote": {
+            "id": {
+              "json_class": "Pact::SomethingLike",
+              "contents": 1
+            },
+            "content": "Quote that"
+          }
+        }
+      }
+    },
+    {
+      "description": "a request to create a quote",
+      "providerState": "the quote content is invalid",
+      "request": {
+        "method": "post",
+        "path": "/quote",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "quote": {
+            "content": "Invalid quote"
+          }
+        }
+      },
+      "response": {
+        "status": 422,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "error": {
+            "json_class": "Pact::SomethingLike",
+            "contents": {
+              "message": "message",
+              "type": "error type"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "1.0.0"
+    }
+  }
+}
