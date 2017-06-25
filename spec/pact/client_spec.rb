@@ -12,13 +12,13 @@ RSpec.describe QuoteOfTheDay::Client, pact: true do
 
   describe 'get_quote' do
     before do
-      quote_of_the_day_service.given('foo')
+      quote_of_the_day_service
         .upon_receiving('a request for a quote')
         .with(method: :get, path: '/quote')
         .will_respond_with(
           status: 200,
           headers: headers,
-          body: { quote: { content: 'Quote this' } })
+          body: { quote: { content: Pact.like('Quote this') } })
     end
 
     subject(:quote) { client.get_quote }

@@ -1,14 +1,14 @@
 # QuoteOfTheDay Gem
 
 A client for the
-[Quote of the Day Service](https://github.com/jdlubrano/quote_of_the_day)
+[Quote of the Day Service](https://github.com/jdlubrano/quote_of_the_day-api)
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'quote_of_the_day-client'
+gem 'quote_of_the_day'
 ```
 
 And then execute:
@@ -17,7 +17,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install quote_of_the_day-client
+    $ gem install quote_of_the_day
 
 ## Usage
 
@@ -37,7 +37,7 @@ push git commits and tags, and push the `.gem` file to [rubygems.org](https://ru
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at
-https://github.com/Joel Lubrano/quote_of_the_day-client.
+https://github.com/jdlubrano/quote_of_the_day-gem.
 This project is intended to be a safe, welcoming space for collaboration, and
 contributors are expected to adhere to the
 [Contributor Covenant](http://contributor-covenant.org) code of conduct.

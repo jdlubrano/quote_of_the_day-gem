@@ -8,7 +8,6 @@
   "interactions": [
     {
       "description": "a request for a quote",
-      "providerState": "foo",
       "request": {
         "method": "get",
         "path": "/quote"
@@ -20,7 +19,10 @@
         },
         "body": {
           "quote": {
-            "content": "Quote this"
+            "content": {
+              "json_class": "Pact::SomethingLike",
+              "contents": "Quote this"
+            }
           }
         }
       }
